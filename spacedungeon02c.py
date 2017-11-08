@@ -1,0 +1,38 @@
+import random
+print('         ~~~~~~~~~******  Welcome Traveler  ******~~~~~~~~~')
+print('       ~~~~~~~~~~~******  to Space Dungeon  ******~~~~~~~~~~~')
+print('')
+print("                  Who dares to enter the dungeon?")
+name = input()
+print("               Foolish " + str(name) + " you will soon meet your end!")
+print("       Tell me, are you a *hunter*, *thief*, *magician*, or *warrior*?")
+class1 = input()
+print("    If you are a " + str(class1) + " like you say you are, how much damage can you do?")
+attack_points = int(input())
+if attack_points >= 100:
+    print("    I know you are not that powerful, you can't have over 100 points! Try again!")
+    attack_points = int(input())
+magic_points = int(100 - attack_points)
+print("    Alright, since you can only have 100 points at this level, you have left yourself with" , str(magic_points) , "magic points")
+print('')
+print("                    Well " + str(name) + " you may enter the dungeon.")
+print('')
+print('    Hopefully a ' + str(class1) + ' like yourself can survive with only ' + str(attack_points) + ' attack points, and' + str(magic_points) + 'magic points.')
+print('')
+print('    There is an enemy!! Do you wish to *attack* or *cast a spell*?')
+print('')
+offense = input()
+print('')
+if offense == 'cast a spell':
+    while magic_points >= 10:
+        print('Your spell has hit the enemy!')
+        magic_points -= random.randint(1, 10)
+        print('You have ' + str(magic_points) + ' magic points left.')
+elif offense == 'attack':
+    while attack_points >= 10:
+        print('You hit the enemy!')
+        attack_points -= random.randint(1, 10)
+        print('You have ' + str(attack_points) + ' attack points left.')
+print('')
+print('    Despite all your efforts, the beast looks unfazed. Your future does not look bright.')
+print('')
